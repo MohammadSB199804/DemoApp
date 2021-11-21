@@ -1,0 +1,21 @@
+<div class="wrapper fadeInDown " *ngIf="!loginStatus">
+  <div id="formContent">
+     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
+     <form>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" [(ngModel)]="model.userName">
+        <br><br>
+        <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" [(ngModel)]="model.Password">
+        <br><br>
+        <input type="submit" class="fadeIn fourth" value="Log In" (click)="onLogin()">
+        <div class="spinner-border" role="status" *ngIf="loader">
+        </div>
+     </form>
+     <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+     </div>
+  </div>
+</div>
+
+
+
+

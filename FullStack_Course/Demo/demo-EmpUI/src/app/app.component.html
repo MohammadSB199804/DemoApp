@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="row">
+    <app-header (headerChoice)="onNavigate($event)" 
+      [headerLoginStatus]="loginStatus" 
+      [headerLoginName]="loginName"
+      ></app-header>
+  </div>
+  <!-- <app-home [logOutStatus]="headerLogOutStatus"></app-home> -->
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <app-home *ngIf="headerChoice === 'home'"></app-home>
+    <app-register *ngIf="headerChoice === 'register'"></app-register>
+  </div>
+  <app-login *ngIf="headerChoice === 'login'" (loginEventStatus)="onLoginStatus($event)"></app-login>
+</div>
